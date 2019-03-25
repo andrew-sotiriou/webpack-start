@@ -5,6 +5,7 @@ Simple Webpack Setup.
 Will take html file from src folder and move it to dist folder with minification and include the entry JS file
 Will take the JS file in src folder and move it to dist folder will minify for build run, has babel for backwards compatibility 
 Will take SCSS file and convert it to CSS and load the script via JS when needed
+There is a plugin to remove all files in the dist folder and then reload all the files each time
 
 RUN:
 npm run develop 
