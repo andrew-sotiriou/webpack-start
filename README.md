@@ -7,7 +7,7 @@ Will take the JS file in src folder and move it to dist folder will minify for b
 	-> updated output section so JS files will be loaded into a JS directory
 Will take SCSS file and convert it to CSS and load the script via JS when needed
 There is a plugin to remove all files in the dist folder and then reload all the files each time
-Update to take images and move them to dist folder
+Update to take images and move them to dist/images folder
 
 RUN:
 npm run develop 
@@ -18,5 +18,3 @@ to have everything minified and ready for deployment
 
 Things to add later:
 	-> Add Webpack Hot module Replacement
-	-> have files added into appropriate folders
-	-> update so images move to img folder
