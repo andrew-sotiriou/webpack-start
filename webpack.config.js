@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].bundle.js'
+    filename: 'js/index.bundle.js'
   },
   plugins: [
     new CleanWebpackPlugin(),
