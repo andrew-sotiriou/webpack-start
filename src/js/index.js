@@ -2,7 +2,7 @@ import '../scss/index.scss';
 import Swing from '../images/tswing.png';
 import Free from '../images/free.png';
 
-const test = `hello webpacker`;
+const test = `hello webpacker. You crazy fool.`;
 console.log(test);
 
 function component(){

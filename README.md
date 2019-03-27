@@ -8,6 +8,7 @@ Will take the JS file in src folder and move it to dist folder will minify for b
 Will take SCSS file and convert it to CSS and load the script via JS when needed<br />
 There is a plugin to remove all files in the dist folder and then reload all the files each time<br />
 Update to take images and move them to dist/images folder<br />
+Add in webpack dev server so that you can access the application from http://localhost:8080/
 
 RUN:
 
