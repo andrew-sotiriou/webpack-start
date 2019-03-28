@@ -8,6 +8,16 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/index.bundle.js'
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 8080,
+    headers:{
+      'X-Custom-Header': 'Custom'
+    },
+    https: false,
+    open: true
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

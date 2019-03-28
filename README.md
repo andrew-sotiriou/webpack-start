@@ -9,6 +9,7 @@ Will take SCSS file and convert it to CSS and load the script via JS when needed
 There is a plugin to remove all files in the dist folder and then reload all the files each time<br />
 Update to take images and move them to dist/images folder<br />
 Add in webpack dev server so that you can access the application from http://localhost:8080/
+Webpack Dev Server added in devServer section for devServer configuration (can change port, activate https, add custom headers)
 
 RUN:
 
