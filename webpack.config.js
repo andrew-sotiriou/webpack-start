@@ -13,7 +13,9 @@ module.exports = {
     compress: true,
     port: 8080,
     headers:{
-      'X-Custom-Header': 'Custom'
+      'X-Custom-Header': 'Custom',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
     },
     https: false,
     open: true
