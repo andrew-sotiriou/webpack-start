@@ -1,78 +1,40 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin'); 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+//look to add Hot Module Replacement
 module.exports = {
-  entry: './src/js/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/index.bundle.js'
+  mode: 'development',
+  entry: {
+    index: './src/index.js',
+    print: './src/print.js'
   },
+  devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 8080,
-    headers:{
-      'X-Custom-Header': 'Custom',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': '*',
-    },
-    https: false,
-    open: true
+    static: './dist',
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      inject: true,
-      chunks: ['main'],
-      template: 'src/index.html',
+      title: 'Development',
     }),
   ],
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true
+  },
+  watchOptions: {
+    poll: 10000 // Check for changes every 10 seconds, this is needed for WSL2
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            "plugins": [ "@babel/transform-runtime" ]
-          },
-        },
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.html$/,
-        use: [
-            {
-                loader: "html-loader",
-                options: { minimize: true }
-            }
-        ]
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
-      {
-        test: /\.scss$/,
-        use: [{
-          loader: 'style-loader',
-        }, 
-        {
-          loader: 'css-loader',
-        }, 
-        {
-          loader: 'sass-loader',
-        }],
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            outputPath: 'images/',
-            name: '[name].[ext]'
-          }
-        }
-        ]
-      }
     ],
   },
 };
