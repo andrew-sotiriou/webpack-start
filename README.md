@@ -4,7 +4,8 @@ The HTML file will be static in the dist folder and all of the files will be loc
 
 Things to do: <br />
 Add the ability to have the HTML file in the src instead of the dist folder <br />
-Add the ability to have th JS/CSS/Image files in separate folders
+Add the ability to have th JS/CSS/Image files in separate folders <br />
+Look into minification of CSS files
 
 RUN:
 
