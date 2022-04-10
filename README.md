@@ -2,7 +2,19 @@ For Node v16 should use the new version of Webpack.
 
 The HTML file will be static in the dist folder and all of the files will be located in the src folder.
 
-Things to do: <br /> - Add the ability to have the HTML file in the src instead of the dist folder <br /> - Add the ability to have th JS/CSS/Image files in separate folders
+Things to do: <br />
+Add the ability to have the HTML file in the src instead of the dist folder <br />
+Add the ability to have th JS/CSS/Image files in separate folders
+
+RUN:
+
+npm run watch <br />
+development version to have the update files be watched
+
+npm run start <br />
+webpack dev server so that you can access the application from http://localhost:8080/
+
+---
 
 The below information is for Node version 8. The version 8 setup can be found in the old/v8 folder
 Version 1:
