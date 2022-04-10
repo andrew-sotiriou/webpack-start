@@ -1,12 +1,11 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-//look to add Hot Module Replacement
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    index: './src/index.js',
-    print: './src/print.js'
+    index: './src/js/index.js',
+    print: './src/js/print.js'
   },
   devtool: 'inline-source-map',
   devServer: {
