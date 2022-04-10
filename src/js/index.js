@@ -1,5 +1,5 @@
-import './css/style.css';
-import Icon from './images/icon.png';
+import '../css/style.css';
+import Icon from '../images/icon.png';
 import printMe from './print.js';
 
 function component() {
