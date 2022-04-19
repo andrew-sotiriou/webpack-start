@@ -3,8 +3,6 @@ For Node v16 should use the new version of Webpack.
 The HTML file will be static in the dist folder and all of the files will be located in the src folder.
 
 Things to do: <br />
-Add the ability to have the HTML file in the src instead of the dist folder <br />
-Add the ability to have th JS/CSS/Image files in separate folders <br />
 Look into minification of CSS files
 
 RUN:

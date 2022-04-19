@@ -1,39 +1,45 @@
-const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-  mode: 'production',
   entry: {
-    index: './src/js/index.js',
-    print: './src/js/print.js'
+    main: path.resolve(__dirname, './src/js/index.js'),
   },
-  devtool: 'inline-source-map',
-  devServer: {
-    static: './dist',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Development',
-    }),
-  ],
   output: {
-    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    filename: 'js/[name].bundle.js',
+    assetModuleFilename: "images/[name][ext][query]"
   },
+  mode: 'development',
   watchOptions: {
     poll: 10000 // Check for changes every 10 seconds, this is needed for WSL2
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css"
+    }),
+    new HtmlWebpackPlugin({
+      title: 'webpack start',
+      template: './src/html/index.html',
+      filename: 'index.html' //output file
+    })
+  ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [ MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: 'asset/resource'
       },
-    ],
-  },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      }
+    ]
+  }
 };
